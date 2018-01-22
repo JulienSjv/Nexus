@@ -11,25 +11,25 @@ import lombok.Data;
 @Data
 public class Config {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String background;
-    
-    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String background;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getBackground() {
 		return background;
 	}
+
 	public void setBackground(String background) {
 		this.background = background;
 	}
-    
-    
 
 }
