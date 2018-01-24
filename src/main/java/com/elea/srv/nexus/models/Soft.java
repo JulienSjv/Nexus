@@ -1,18 +1,26 @@
 package com.elea.srv.nexus.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Soft {
+@Table(name = "softs")
+public class Soft implements Serializable {
 
+	private static final long serialVersionUID = 113639028071602752L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -21,6 +29,12 @@ public class Soft {
 	private String version;
 	private String image;
 	private Date dateLastUpdate;
+	
+	@ManyToOne()
+	@JoinColumn
+	private Categorie categorie;
+	
+	
 
 	public Long getId() {
 		return id;
@@ -69,12 +83,17 @@ public class Soft {
 	public void setDateLastUpdate(Date dateLastUpdate) {
 		this.dateLastUpdate = dateLastUpdate;
 	}
-
-	@Override
-	public String toString() {
-		return "Soft [id=" + id + ", nom=" + nom + ", url=" + url + ", version=" + version + ", image=" + image
-				+ ", dateLastUpdate=" + dateLastUpdate + "]";
+	
+	
+	public Categorie getCategorie() {
+		return categorie;
 	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+
 	
 	
 
