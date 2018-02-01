@@ -21,6 +21,7 @@ public class Feed implements Serializable {
 	private String nom;
 	private String url;
 	private String color;
+	private Boolean selected;
 	
 	
 	
@@ -48,6 +49,13 @@ public class Feed implements Serializable {
 	public void setColor(String color) {
 		this.color = color;
 	}
+	public Boolean getSelected() {
+		return selected;
+	}
+	public void setSelected(Boolean selected) {
+		this.selected = selected;
+	}
+	
 	
 	
 	
