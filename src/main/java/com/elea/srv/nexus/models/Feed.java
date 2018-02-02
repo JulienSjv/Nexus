@@ -24,7 +24,6 @@ public class Feed implements Serializable {
 	private Boolean selected;
 	
 	
-	
 	public Long getId() {
 		return id;
 	}
