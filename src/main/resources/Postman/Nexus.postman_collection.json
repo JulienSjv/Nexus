@@ -29,6 +29,47 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "{{URL}}:{{PORT}}/backgrounds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "test",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "",
+									"type": "file",
+									"src": "logo.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/backgrounds",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"backgrounds"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
