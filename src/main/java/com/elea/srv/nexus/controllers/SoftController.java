@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -61,6 +62,19 @@ public class SoftController {
 			return "Fail on add..";
 		}
 
+	}
+
+	// DEL SOFT
+	@DeleteMapping("")
+	@ResponseBody
+	public String delSoft(@RequestBody Soft soft) {
+		try {
+			softDao.delete(soft);
+			return "Delete!";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Fail on Delete";
+		}
 	}
 
 }

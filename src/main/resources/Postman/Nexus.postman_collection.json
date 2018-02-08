@@ -1,0 +1,252 @@
+{
+	"info": {
+		"name": "Nexus",
+		"_postman_id": "43dba54c-a535-4723-8cc6-fc9c0f88b812",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Background",
+			"description": "",
+			"item": [
+				{
+					"name": "{{URL}}:{{PORT}}/backgrounds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/backgrounds",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"backgrounds"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"description": "",
+			"item": [
+				{
+					"name": "{{URL}}:{{PORT}}/categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"categories"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Config",
+			"description": "",
+			"item": [
+				{
+					"name": "{{URL}}:{{PORT}}/config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/config",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"config"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feeds",
+			"description": "",
+			"item": [
+				{
+					"name": "{{URL}}:{{PORT}}/feeds",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/feeds",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"feeds"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}:{{PORT}}/feeds",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": 120,\n        \"nom\": \"Korben\",\n        \"url\": \"https://korben.info/feed\",\n        \"color\": \"#323e55\",\n        \"selected\": false\n    },\n    {\n        \"id\": 121,\n        \"nom\": \"Google\",\n        \"url\": \"https://news.google.com/news/rss/settings/sections?ned=fr&hl=fr&gl=FR\",\n        \"color\": \"#08541a\",\n        \"selected\": false\n    },\n    {\n        \"id\": 122,\n        \"nom\": \"Univer Freebox\",\n        \"url\": \"http://www.universfreebox.com/backend.php?id_rubrique=29\",\n        \"color\": \"rgb(187, 33, 33)\",\n        \"selected\": false\n    },\n    {\n        \"id\": 123,\n        \"nom\": \"NextInpact\",\n        \"url\": \"https://www.nextinpact.com/rss/news.xml\",\n        \"color\": \"rgb(222, 140, 17)\",\n        \"selected\": false\n    },\n    {\n        \"id\": 124,\n        \"nom\": \"NextInpact\",\n        \"url\": \"https://www.nextinpact.com/rss/news.xml\",\n        \"color\": \"rgb(222, 140, 17)\",\n        \"selected\": false\n    },\n    {\n        \"id\": 125,\n        \"nom\": \"Univer Freebox\",\n        \"url\": \"http://www.universfreebox.com/backend.php?id_rubrique=29\",\n        \"color\": \"rgb(187, 33, 33)\",\n        \"selected\": false\n    }\n]"
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/feeds",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"feeds"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Softs",
+			"description": "",
+			"item": [
+				{
+					"name": "{{URL}}:{{PORT}}/softs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/softs",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"softs"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}:{{PORT}}/softs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nom\": \"TEST de POST\",\n    \"url\": null,\n    \"version\": null,\n    \"image\": null,\n    \"dateLastUpdate\": null,\n    \"categorie\": {\n        \"id\": 5,\n        \"nom\": \"Web Browser\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/softs",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"softs"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}:{{PORT}}/softs",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 11,\n    \"nom\": \"FireFox\",\n    \"url\": \"test update\",\n    \"version\": null,\n    \"image\": null,\n    \"dateLastUpdate\": null,\n    \"categorie\": {\n        \"id\": 5,\n        \"nom\": \"Web Browser\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/softs",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"softs"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "{{URL}}:{{PORT}}/softs",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nom\": \"TEST de POST\",\n    \"url\": null,\n    \"version\": null,\n    \"image\": null,\n    \"dateLastUpdate\": null,\n    \"categorie\": {\n        \"id\": 5,\n        \"nom\": \"Web Browser\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{URL}}:{{PORT}}/softs",
+							"host": [
+								"{{URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"softs"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -13,15 +13,14 @@ import com.elea.srv.nexus.models.Config;
 @CrossOrigin
 @RequestMapping("config")
 public class ConfigController {
-    
-    @Autowired
-    private ConfigRepository configDao;
-    
-    
-    // GET config
-    @GetMapping("")
-    public Config getConfig() {
-        return configDao.findOne((long) 1);
-    }
-    
+
+	@Autowired
+	private ConfigRepository configDao;
+
+	// GET config
+	@GetMapping("")
+	public Config getConfig() {
+		return configDao.findOne((long) 1);
+	}
+
 }

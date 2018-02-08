@@ -11,19 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.elea.srv.nexus.dao.BackgroundRepository;
 import com.elea.srv.nexus.models.Background;
 
-
 @RestController
 @CrossOrigin
 @RequestMapping("backgrounds")
 public class BackgroundController {
-	
+
 	@Autowired
 	BackgroundRepository bgDao;
-	
+
 	// GET Background
-		@GetMapping("")
-		public List<Background> getBackgrounds() {
-			return bgDao.findAll();
-		}
+	@GetMapping("")
+	public List<Background> getBackgrounds() {
+		return bgDao.findAll();
+	}
 
 }

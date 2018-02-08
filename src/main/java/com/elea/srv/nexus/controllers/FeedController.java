@@ -34,16 +34,8 @@ public class FeedController {
 	@ResponseBody
 	public String updateSoft(@RequestBody List<Feed> feeds) {
 
-		List<Feed> oldFeeds = feedDao.findAll();
+		feedDao.deleteAll();
 
-		for (Feed feed : oldFeeds) {
-			try {
-				feedDao.delete(feed);
-			} catch (Exception ex) {
-				ex.printStackTrace();
-				return "Fail on delete..";
-			}
-		}
 		for (Feed feed : feeds) {
 			try {
 				feedDao.saveAndFlush(feed);
