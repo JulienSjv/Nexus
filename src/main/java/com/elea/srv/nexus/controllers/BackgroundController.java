@@ -1,8 +1,5 @@
 package com.elea.srv.nexus.controllers;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.List;
 
 import org.hibernate.type.ImageType;
@@ -60,31 +57,21 @@ public class BackgroundController {
 	// ADD Background
 	@PostMapping("")
 	@ResponseBody
-	public String addBg( @RequestParam("file") MultipartFile file, @RequestParam("nom") String name) {
+	public String addBg(@RequestParam("file") MultipartFile uploadfile) {
 		
-		if (!file.isEmpty()) {
-            try {
-                ImageType image = (ImageType) file;
-                Background nbg = new Background();
-                
-                nbg.setImage(image);
-                nbg.setNom(name);
-                
-                bgDao.save(nbg);
-                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
-            } catch (Exception e) {
-                return "You failed to upload " + name + " => " + e.getMessage();
-            }
-        } else {
-            return "You failed to upload " + name + " because the file was empty.";
-        }
-//		try {
-//			bgDao.save(file);
-//			return "Added!";
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			return "Fail on add!";
-//		}
+		Background bg = new Background();
+		ImageType img = new ImageType();
+		
+//		bg.setImage(uploadfile.getInputStream());
+		bg.setNom(uploadfile.getName());
+		
+		try {
+			bgDao.save(bg);
+			return "Added!";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Fail on add!";
+		}
 	}
 
 	// DEL background
